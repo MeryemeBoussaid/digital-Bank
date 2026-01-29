@@ -1,0 +1,95 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="bi bi-plus-circle"></i> Create New Account</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Error Message -->
+                    <div *ngIf="errorMessage" class="alert alert-danger">
+                        <i class="bi bi-exclamation-triangle-fill"></i> {{ errorMessage }}
+                    </div>
+
+                    <form [formGroup]="newAccountForm" (ngSubmit)="onSubmit()">
+                        <!-- Customer Selection -->
+                        <div class="mb-3">
+                            <label for="customerId" class="form-label">Customer <span
+                                    class="text-danger">*</span></label>
+                            <select class="form-select" id="customerId" formControlName="customerId">
+                                <option value="">-- Select a customer --</option>
+                                <option *ngFor="let customer of customers" [value]="customer.id">
+                                    {{ customer.name }} ({{ customer.email }})
+                                </option>
+                            </select>
+                            <div *ngIf="newAccountForm.get('customerId')?.invalid && newAccountForm.get('customerId')?.touched"
+                                class="text-danger small">
+                                Customer is required
+                            </div>
+                        </div>
+
+                        <!-- Account Type -->
+                        <div class="mb-3">
+                            <label class="form-label">Account Type <span class="text-danger">*</span></label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="accountType"
+                                    value="CurrentAccount" id="currentAccount">
+                                <label class="form-check-label" for="currentAccount">
+                                    <i class="bi bi-credit-card text-primary"></i> Current Account
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="accountType"
+                                    value="SavingAccount" id="savingAccount">
+                                <label class="form-check-label" for="savingAccount">
+                                    <i class="bi bi-piggy-bank text-success"></i> Saving Account
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Initial Balance -->
+                        <div class="mb-3">
+                            <label for="initialBalance" class="form-label">Initial Balance (MAD) <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="initialBalance"
+                                formControlName="initialBalance" min="0" step="0.01">
+                            <div *ngIf="newAccountForm.get('initialBalance')?.invalid && newAccountForm.get('initialBalance')?.touched"
+                                class="text-danger small">
+                                Initial balance must be 0 or greater
+                            </div>
+                        </div>
+
+                        <!-- Overdraft (for Current Account) -->
+                        <div class="mb-3" *ngIf="newAccountForm.get('accountType')?.value === 'CurrentAccount'">
+                            <label for="overdraft" class="form-label">Overdraft Limit (MAD)</label>
+                            <input type="number" class="form-control" id="overdraft" formControlName="overdraft" min="0"
+                                step="0.01">
+                            <small class="text-muted">Maximum negative balance allowed</small>
+                        </div>
+
+                        <!-- Interest Rate (for Saving Account) -->
+                        <div class="mb-3" *ngIf="newAccountForm.get('accountType')?.value === 'SavingAccount'">
+                            <label for="interestRate" class="form-label">Interest Rate (%)</label>
+                            <input type="number" class="form-control" id="interestRate" formControlName="interestRate"
+                                min="0" max="100" step="0.01">
+                            <small class="text-muted">Annual interest rate</small>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-success"
+                                [disabled]="newAccountForm.invalid || loading">
+                                <i class="bi bi-check-circle"></i>
+                                <span *ngIf="!loading">Create Account</span>
+                                <span *ngIf="loading">Creating...</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" (click)="onCancel()">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

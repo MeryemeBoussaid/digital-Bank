@@ -4,7 +4,7 @@
   </button>
   <span>DIGITAL BANK</span>
   <span style="flex: auto"></span>
-  <button mat-button routerLink="/admin/home">
+  <button mat-button [routerLink]="authService.isAdmin() ? '/admin/home' : '/user/home'">
     <mat-icon>home</mat-icon>
     Home
   </button>
@@ -38,7 +38,8 @@
     <button mat-menu-item>
       Role: {{ authService.roles == 'ROLE_USER' ? 'User' : (authService.roles.includes('ADMIN') ? 'Admin' : 'NULL') }}
     </button>
-    <button mat-menu-item routerLink="/admin/profile">Change password</button>
+    <button mat-menu-item [routerLink]="authService.isAdmin() ? '/admin/profile' : '/user/profile'">Change
+      password</button>
   </mat-menu>
   <button (click)="logout()" color="warn" mat-raised-button>Logout</button>
 </mat-toolbar>
@@ -51,6 +52,22 @@
         <button mat-button routerLink="/admin/dashboard">
           <mat-icon>dashboard</mat-icon>
           <span>Dashboard</span>
+        </button>
+      </mat-list-item>
+
+      <!-- Transactions -->
+      <mat-list-item>
+        <button mat-button routerLink="/admin/transactions">
+          <mat-icon>receipt_long</mat-icon>
+          <span>Transactions</span>
+        </button>
+      </mat-list-item>
+
+      <!-- Alerts -->
+      <mat-list-item>
+        <button mat-button routerLink="/admin/alerts">
+          <mat-icon>warning</mat-icon>
+          <span>Alerts</span>
         </button>
       </mat-list-item>
 
@@ -90,7 +107,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-action-list>
-            <button mat-list-item routerLink="/admin/accounts">
+            <button mat-list-item routerLink="/admin/new-account">
               <mat-icon>add_circle_outline</mat-icon>
               Add Account
             </button>
@@ -105,14 +122,6 @@
           </mat-action-list>
         </mat-expansion-panel>
       </mat-accordion>
-
-      <!-- User Management Section -->
-      <mat-list-item>
-        <button mat-button routerLink="/admin/users">
-          <mat-icon>security</mat-icon>
-          Manage Users
-        </button>
-      </mat-list-item>
 
     </mat-nav-list>
   </mat-drawer>

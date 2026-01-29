@@ -1,29 +1,68 @@
 <div class="container mt-5">
-  <h1 class="mb-4">Welcome to DigitalBank</h1>
-  <p class="lead">An advanced digital banking platform designed for secure and efficient financial management.</p>
+  <!-- Content for ADMIN -->
+  <div *ngIf="authService.isAdmin()">
+    <h1 class="mb-4">Welcome to DigitalBank</h1>
+    <p class="lead">An advanced digital banking platform designed for secure and efficient financial management.</p>
 
-  <div class="row my-4">
-    <div class="col-lg-6">
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>Spring Boot - for backend services</li>
-        <li>Spring OAuth2 Authorization Server - for secure JWT-based authentication</li>
-        <li>Angular - for a dynamic and responsive frontend</li>
-      </ul>
+    <div class="row my-4">
+      <div class="col-lg-6">
+        <h2>Technologies Used</h2>
+        <ul>
+          <li>Spring Boot - for backend services</li>
+          <li>Spring OAuth2 Authorization Server - for secure JWT-based authentication</li>
+          <li>Angular - for a dynamic and responsive frontend</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <h2>Core Features</h2>
+        <ul>
+          <li>Profile Management - Manage user profiles and settings</li>
+          <li>Account Management - Handle all account operations</li>
+          <li>Customer Management - Manage customer data and interactions</li>
+        </ul>
+      </div>
     </div>
-    <div class="col-lg-6">
-      <h2>Core Features</h2>
-      <ul>
-        <li>Profile Management - Manage user profiles and settings</li>
-        <li>Account Management - Handle all account operations</li>
-        <li>Customer Management - Manage customer data and interactions</li>
-      </ul>
-    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted">DigitalBank - ENSET Mohammadia 2024. Created by EL MOUADDIBE Zaid.</span>
+      </div>
+    </footer>
   </div>
 
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container text-center">
-      <span class="text-muted">DigitalBank - ENSET Mohammadia 2024. Created by EL MOUADDIBE Zaid.</span>
+  <!-- Content for USER and MANAGER -->
+  <div *ngIf="!authService.isAdmin()" class="text-center">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+      <div class="card-header bg-primary text-white">
+        <h2><i class="bi bi-person-circle"></i> Welcome</h2>
+      </div>
+      <div class="card-body p-5">
+        <h3 class="card-title mb-4">Hello, {{ authService.username }}!</h3>
+        <div class="alert alert-info">
+          <i class="bi bi-info-circle-fill"></i>
+          <strong>Role:</strong> {{ authService.roles }}
+        </div>
+        <p class="lead mt-4">You are successfully logged in to DigitalBank.</p>
+        <p class="text-muted">
+          Welcome to your personal banking dashboard.
+        </p>
+        <hr class="my-4">
+
+        <div class="alert alert-warning">
+          <i class="bi bi-info-circle"></i>
+          <strong>Note:</strong> This is a banking administration system.
+          For account inquiries or banking services, please contact your administrator.
+        </div>
+        <div class="mt-4">
+          <p class="text-muted">
+            <i class="bi bi-envelope"></i> Contact: admin&#64;digitalbank.com<br>
+            <i class="bi bi-telephone"></i> Phone: +212 5XX-XXXXXX
+          </p>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        DigitalBank - ENSET Mohammadia 2024
+      </div>
     </div>
-  </footer>
+  </div>
 </div>

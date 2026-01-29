@@ -1,0 +1,106 @@
+<div class="container-fluid mt-4">
+    <h2><i class="bi bi-clock-history"></i> Recent Transactions</h2>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5>Total Credits</h5>
+                    <h3>{{ getTotalAmount('CREDIT') | number: '1.2-2' }} MAD</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5>Total Debits</h5>
+                    <h3>{{ getTotalAmount('DEBIT') | number: '1.2-2' }} MAD</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5>Total Transactions</h5>
+                    <h3>{{ allTransactions.length }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Search</label>
+                    <input type="text" class="form-control" [(ngModel)]="searchTerm" (ngModelChange)="applyFilters()"
+                        placeholder="Search by description or customer...">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Filter by Type</label>
+                    <select class="form-select" [(ngModel)]="filterType" (ngModelChange)="applyFilters()">
+                        <option value="ALL">All Types</option>
+                        <option value="CREDIT">Credit Only</option>
+                        <option value="DEBIT">Debit Only</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="text-center my-5">
+        <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+        <p class="mt-3">Loading transactions...</p>
+    </div>
+
+    <!-- Transactions Table -->
+    <div *ngIf="!loading" class="card">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">All Transactions ({{ filteredTransactions.length }})</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Account ID</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th class="text-end">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of filteredTransactions.slice(0, 50)">
+                            <td>{{ transaction.operationDate | date: 'dd/MM/yyyy HH:mm' }}</td>
+                            <td>{{ transaction.customerName }}</td>
+                            <td><code>{{ transaction.accountId }}</code></td>
+                            <td>
+                                <span class="badge"
+                                    [ngClass]="transaction.operationType === 'DEBIT' ? 'bg-danger' : 'bg-success'">
+                                    {{ transaction.operationType }}
+                                </span>
+                            </td>
+                            <td>{{ transaction.description }}</td>
+                            <td class="text-end"
+                                [ngClass]="transaction.operationType === 'DEBIT' ? 'text-danger' : 'text-success'">
+                                {{ transaction.operationType === 'DEBIT' ? '-' : '+' }}{{ transaction.amount | number:
+                                '1.2-2' }} MAD
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="filteredTransactions.length === 0" class="text-center text-muted py-4">
+                    No transactions found
+                </p>
+                <p *ngIf="filteredTransactions.length > 50" class="text-muted text-center">
+                    Showing first 50 transactions of {{ filteredTransactions.length }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

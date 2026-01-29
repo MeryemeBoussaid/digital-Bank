@@ -1,0 +1,1872 @@
+﻿node.exe : - Building...
+At C:\Users\hp\AppData\Roaming\npm\ng.ps1:24 char:5
++     & "node$exe"  
+"$basedir/node_modules/@angular/cli/bin/ng.js" $arg 
+...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (- Build 
+   ing...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Application bundle generation failed. [7.049 seconds]
+
+X [ERROR] NG8002: Can't bind to 'formGroup' since it 
+isn't a known property of 'form'. [plugin 
+angular-compiler]
+
+    src/app/accounts/accounts.component.html:7:16:
+      7 Ôöé           <form 
+[formGroup]="accountFormGroup" 
+(ngSubmit)="handleSe...
+        ÔòÁ                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+AccountsComponent.
+
+    src/app/accounts/accounts.component.ts:9:15:
+      9 Ôöé   templateUrl: 
+'./accounts.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8004: No pipe found with name 'number'. 
+[plugin angular-compiler]
+
+    src/app/accounts/accounts.component.html:37:56:
+      37 Ôöé ...ong>{{accountDetails.balance | 
+number : '1.2-2'}}</strong></label>
+         ÔòÁ                                   ~~~~~~
+
+  Error occurs in the template of component 
+AccountsComponent.
+
+    src/app/accounts/accounts.component.ts:9:15:
+      9 Ôöé   templateUrl: 
+'./accounts.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8004: No pipe found with name 'date'. 
+[plugin angular-compiler]
+
+    src/app/accounts/accounts.component.html:46:43:
+      46 Ôöé ...      <td>{{op.operationDate | date 
+: 'dd-MM-yyyy:HH-mm-ss'}}</td>
+         ÔòÁ                                   ~~~~
+
+  Error occurs in the template of component 
+AccountsComponent.
+
+    src/app/accounts/accounts.component.ts:9:15:
+      9 Ôöé   templateUrl: 
+'./accounts.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8004: No pipe found with name 'number'. 
+[plugin angular-compiler]
+
+    src/app/accounts/accounts.component.html:48:53:
+      48 Ôöé ...        <td 
+class="text-end">{{op.amount | number : 
+'1.2-2'}}</td>
+         ÔòÁ                                         
+      ~~~~~~
+
+  Error occurs in the template of component 
+AccountsComponent.
+
+    src/app/accounts/accounts.component.ts:9:15:
+      9 Ôöé   templateUrl: 
+'./accounts.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'ngClass' since it 
+isn't a known property of 'a'. [plugin 
+angular-compiler]
+
+    src/app/accounts/accounts.component.html:54:19:
+      54 Ôöé ...       <a [ngClass]="page==currentPag
+e?'btn-info':'btn-outline-...
+         ÔòÁ              
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+AccountsComponent.
+
+    src/app/accounts/accounts.component.ts:9:15:
+      9 Ôöé   templateUrl: 
+'./accounts.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'formGroup' since it 
+isn't a known property of 'form'. [plugin 
+angular-compiler]
+
+    src/app/accounts/accounts.component.html:68:16:
+      68 Ôöé           <form 
+[formGroup]="operationFromGroup" (ngSubmit)="handl...
+         ÔòÁ                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+AccountsComponent.
+
+    src/app/accounts/accounts.component.ts:9:15:
+      9 Ôöé   templateUrl: 
+'./accounts.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] TS2307: Cannot find module 
+'./not-authorized/not-authorized.component' or its 
+corresponding type declarations. [plugin 
+angular-compiler]
+
+    src/app/app-routing.module.ts:13:37:
+      13 Ôöé ...orizedComponent} from 
+"./not-authorized/not-authorized.component";
+         ÔòÁ                          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] Could not resolve 
+"./not-authorized/not-authorized.component"
+
+    src/app/app-routing.module.ts:13:39:
+      13 Ôöé ...rizedComponent } from 
+"./not-authorized/not-authorized.component";
+         ÔòÁ                          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'router-outlet' is not a known 
+element:
+1. If 'router-outlet' is an Angular component, then 
+verify that it is part of this module.
+2. If 'router-outlet' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/app.component.html:0:0:
+      0 Ôöé 
+        ÔòÁ ^
+
+  Error occurs in the template of component 
+AppComponent.
+
+    src/app/app.component.ts:6:15:
+      6 Ôöé   templateUrl: './app.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] TS2307: Cannot find module 
+'./not-authorized/not-authorized.component' or its 
+corresponding type declarations. [plugin 
+angular-compiler]
+
+    src/app/app.module.ts:30:39:
+      30 Ôöé ...rizedComponent } from 
+'./not-authorized/not-authorized.component';
+         ÔòÁ                          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] Could not resolve 
+"./not-authorized/not-authorized.component"
+
+    src/app/app.module.ts:31:39:
+      31 Ôöé ...rizedComponent } from 
+'./not-authorized/not-authorized.component';
+         ÔòÁ                          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] TS-991010: Value at position 8 in the 
+NgModule.declarations of AppModule is not a reference
+  Value could not be determined statically. [plugin 
+angular-compiler]
+
+    src/app/app.module.ts:39:16:
+      39 Ôöé   declarations: [
+         ÔòÁ                 ^
+
+  Unknown reference.
+
+    src/app/app.module.ts:48:4:
+      48 Ôöé     NotAuthorizedComponent,
+         ÔòÁ     ~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card' is not a known element:
+1. If 'mat-card' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-card' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:2:2:
+      2 Ôöé   <mat-card class="shadow-sm">
+        ÔòÁ   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-header' is not a known 
+element:
+1. If 'mat-card-header' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-card-header' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:3:4:
+      3 Ôöé     <mat-card-header>
+        ÔòÁ     ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-title' is not a known 
+element:
+1. If 'mat-card-title' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-card-title' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:4:6:
+      4 Ôöé       
+<mat-card-title>Customers</mat-card-title>
+        ÔòÁ       ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-divider' is not a known 
+element:
+1. If 'mat-divider' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-divider' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:6:4:
+      6 Ôöé     <mat-divider></mat-divider>
+        ÔòÁ     ~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-form-field' is not a known 
+element:
+1. If 'mat-form-field' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:7:4:
+      7 Ôöé     <mat-form-field appearance="fill" 
+class="w-100 px-4 py-2">
+        ÔòÁ     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:8:6:
+      8 Ôöé       <mat-label>Search 
+Customers</mat-label>
+        ÔòÁ       ~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:11:8:
+      11 Ôöé         <mat-icon>search</mat-icon>
+         ÔòÁ         ~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-content' is not a known 
+element:
+1. If 'mat-card-content' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-card-content' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:16:6:
+      16 Ôöé       <mat-card-content>
+         ÔòÁ       ~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'dataSource' since 
+it isn't a known property of 'table'. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:18:27:
+      18 Ôöé ...  <table mat-table 
+[dataSource]="dataSource" matSort class="w-1...
+         ÔòÁ                       
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:39:18:
+      39 Ôöé                   
+<mat-icon>edit</mat-icon>
+         ÔòÁ                   ~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:42:18:
+      42 Ôöé                   
+<mat-icon>delete</mat-icon>
+         ÔòÁ                   ~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-paginator' is not a known 
+element:
+1. If 'mat-paginator' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-paginator' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:49:10:
+      49 Ôöé           <mat-paginator 
+[pageSizeOptions]="[5, 10, 20, 50]" showF...
+         ÔòÁ           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'pageSizeOptions' 
+since it isn't a known property of 'mat-paginator'.
+1. If 'mat-paginator' is an Angular component and it 
+has 'pageSizeOptions' input, then verify that it is 
+part of this module.
+2. If 'mat-paginator' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to 
+the '@NgModule.schemas' of this component. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:49:25:
+      49 Ôöé ...mat-paginator [pageSizeOptions]="[5, 
+10, 20, 50]" showFirstLast...
+         ÔòÁ                  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-content' is not a known 
+element:
+1. If 'mat-card-content' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-card-content' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/customers/customers.component.html:55:4:
+      55 Ôöé     <mat-card-content>
+         ÔòÁ     ~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-progress-spinner' is not a 
+known element:
+1. If 'mat-progress-spinner' is an Angular 
+component, then verify that it is part of this 
+module.
+2. If 'mat-progress-spinner' is a Web Component then 
+add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/customers/customers.component.html:57:6:
+      57 Ôöé       <mat-progress-spinner 
+*ngIf="!errorMessage" mode="indetermin...
+         ÔòÁ       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+CustomersComponent.
+
+    src/app/customers/customers.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./customers.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8004: No pipe found with name 
+'currency'. [plugin angular-compiler]
+
+    src/app/dashboard/dashboard.component.html:24:49:
+      24 Ôöé           <p class="card-text">{{ 
+totalBalance | currency }}</p>
+         ÔòÁ                                         
+         ~~~~~~~~
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/dashboard/dashboard.component.ts:12:15:
+      12 Ôöé   templateUrl: 
+'./dashboard.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'formGroup' since it 
+isn't a known property of 'form'. [plugin 
+angular-compiler]
+
+    src/app/edit-customer/edit-customer.component.htm
+l:9:52:
+      9 Ôöé ...bmit)="handleUpdateCustomer()" 
+[formGroup]="editCustomerFormGroup">
+        ÔòÁ                                   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+EditCustomerComponent.
+
+    src/app/edit-customer/edit-customer.component.ts:
+10:15:
+      10 Ôöé   templateUrl: 
+'./edit-customer.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card' is not a known element:
+1. If 'mat-card' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-card' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:2:2:
+      2 Ôöé   <mat-card class="login-form" 
+[formGroup]="loginForm">
+        ÔòÁ   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'formGroup' since it 
+isn't a known property of 'mat-card'.
+1. If 'mat-card' is an Angular component and it has 
+'formGroup' input, then verify that it is part of 
+this module.
+2. If 'mat-card' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to 
+the '@NgModule.schemas' of this component. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:2:31:
+      2 Ôöé   <mat-card class="login-form" 
+[formGroup]="loginForm">
+        ÔòÁ                                
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-header' is not a known 
+element:
+1. If 'mat-card-header' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-card-header' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:3:4:
+      3 Ôöé     <mat-card-header>
+        ÔòÁ     ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-title' is not a known 
+element:
+1. If 'mat-card-title' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-card-title' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:4:6:
+      4 Ôöé       
+<mat-card-title><mat-icon>lock</mat-icon> 
+Authentication</mat...
+        ÔòÁ       ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:4:22:
+      4 Ôöé       
+<mat-card-title><mat-icon>lock</mat-icon> 
+Authentication</mat...
+        ÔòÁ                       ~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-divider' is not a known 
+element:
+1. If 'mat-divider' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-divider' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:6:4:
+      6 Ôöé     <mat-divider></mat-divider>
+        ÔòÁ     ~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-card-content' is not a known 
+element:
+1. If 'mat-card-content' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-card-content' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:8:4:
+      8 Ôöé     <mat-card-content>
+        ÔòÁ     ~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-form-field' is not a known 
+element:
+1. If 'mat-form-field' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:9:6:
+      9 Ôöé       <mat-form-field 
+appearance="outline" class="full-width-input">
+        ÔòÁ       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:10:8:
+      10 Ôöé         <mat-label>Username or 
+Email</mat-label>
+         ÔòÁ         ~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:12:8:
+      12 Ôöé         <mat-icon 
+matSuffix>person_outline</mat-icon>
+         ÔòÁ         ~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-form-field' is not a known 
+element:
+1. If 'mat-form-field' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-form-field' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:14:6:
+      14 Ôöé       <mat-form-field 
+appearance="outline" class="full-width-input">
+         ÔòÁ       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-label' is not a known element:
+1. If 'mat-label' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-label' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:15:8:
+      15 Ôöé         <mat-label>Password</mat-label>
+         ÔòÁ         ~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/login/login.component.html:17:8:
+      17 Ôöé         <mat-icon 
+matSuffix>lock_outline</mat-icon>
+         ÔòÁ         ~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+LoginComponent.
+
+    src/app/login/login.component.ts:9:15:
+      9 Ôöé   templateUrl: './login.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-toolbar' is not a known 
+element:
+1. If 'mat-toolbar' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-toolbar' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:0:0:
+      0 Ôöé 
+        ÔòÁ ^
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'toggle' does not exist on 
+type 'HTMLElement'. Did you mean 'ontoggle'? [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:2:30:
+      2 Ôöé   <button (click)="menuDrawer.toggle()" 
+*ngIf="authService.isAdmin(...
+        ÔòÁ                               ~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:3:4:
+      3 Ôöé     <mat-icon>menu</mat-icon>
+        ÔòÁ     ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:8:4:
+      8 Ôöé     <mat-icon>home</mat-icon>
+        ÔòÁ     ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'matMenuTriggerFor' 
+since it isn't a known property of 'button'. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:11:40:
+      11 Ôöé ...="authService.isAdmin()" 
+[matMenuTriggerFor]="CusMenu" mat-button>
+         ÔòÁ                             
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:12:4:
+      12 Ôöé     <mat-icon>person</mat-icon>
+         ÔòÁ     ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:13:4:
+      13 Ôöé     <mat-icon 
+iconPositionEnd>keyboard_arrow_down</mat-icon>
+         ÔòÁ     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-menu' is not a known element:
+1. If 'mat-menu' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-menu' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:17:2:
+      17 Ôöé   <mat-menu #CusMenu="matMenu">
+         ÔòÁ   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8003: No directive found with exportAs 
+'matMenu'. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:17:22:
+      17 Ôöé   <mat-menu #CusMenu="matMenu">
+         ÔòÁ                       ~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'matMenuTriggerFor' 
+since it isn't a known property of 'button'. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:22:40:
+      22 Ôöé ...thService.isAdmin()" 
+[matMenuTriggerFor]="accountMenu" mat-button>
+         ÔòÁ                         
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:23:4:
+      23 Ôöé     <mat-icon>account_balance</mat-icon>
+         ÔòÁ     ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:24:4:
+      24 Ôöé     <mat-icon 
+iconPositionEnd>keyboard_arrow_down</mat-icon>
+         ÔòÁ     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-menu' is not a known element:
+1. If 'mat-menu' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-menu' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:28:2:
+      28 Ôöé   <mat-menu #accountMenu="matMenu">
+         ÔòÁ   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8003: No directive found with exportAs 
+'matMenu'. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:28:26:
+      28 Ôöé   <mat-menu #accountMenu="matMenu">
+         ÔòÁ                           ~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'matMenuTriggerFor' 
+since it isn't a known property of 'button'. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:33:37:
+      33 Ôöé ...="authService.isAuth" 
+[matMenuTriggerFor]="ProfilMenu" mat-button>
+         ÔòÁ                          
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:35:4:
+      35 Ôöé     <mat-icon 
+iconPositionEnd>keyboard_arrow_down</mat-icon>
+         ÔòÁ     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-menu' is not a known element:
+1. If 'mat-menu' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-menu' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:37:2:
+      37 Ôöé   <mat-menu #ProfilMenu="matMenu">
+         ÔòÁ   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8003: No directive found with exportAs 
+'matMenu'. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:37:25:
+      37 Ôöé   <mat-menu #ProfilMenu="matMenu">
+         ÔòÁ                          ~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-drawer-container' is not a 
+known element:
+1. If 'mat-drawer-container' is an Angular 
+component, then verify that it is part of this 
+module.
+2. If 'mat-drawer-container' is a Web Component then 
+add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:46:0:
+      46 Ôöé <mat-drawer-container 
+class="drawer-container">
+         ÔòÁ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-drawer' is not a known 
+element:
+1. If 'mat-drawer' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-drawer' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:47:2:
+      47 Ôöé   <mat-drawer #menuDrawer 
+class="sidebar" mode="side" [opened]="au...
+         ÔòÁ   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'opened' since it 
+isn't a known property of 'mat-drawer'.
+1. If 'mat-drawer' is an Angular component and it 
+has 'opened' input, then verify that it is part of 
+this module.
+2. If 'mat-drawer' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to 
+the '@NgModule.schemas' of this component. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:47:54:
+      47 Ôöé ...awer class="sidebar" mode="side" 
+[opened]="authService.isAdmin()">
+         ÔòÁ                                     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-nav-list' is not a known 
+element:
+1. If 'mat-nav-list' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-nav-list' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:48:4:
+      48 Ôöé     <mat-nav-list>
+         ÔòÁ     ~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-list-item' is not a known 
+element:
+1. If 'mat-list-item' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-list-item' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:50:6:
+      50 Ôöé       <mat-list-item>
+         ÔòÁ       ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:52:10:
+      52 Ôöé           <mat-icon>dashboard</mat-icon>
+         ÔòÁ           ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-accordion' is not a known 
+element:
+1. If 'mat-accordion' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-accordion' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:58:6:
+      58 Ôöé       <mat-accordion multi="true">
+         ÔòÁ       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-expansion-panel' is not a 
+known element:
+1. If 'mat-expansion-panel' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-expansion-panel' is a Web Component then 
+add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:59:8:
+      59 Ôöé         <mat-expansion-panel>
+         ÔòÁ         ~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-expansion-panel-header' is 
+not a known element:
+1. If 'mat-expansion-panel-header' is an Angular 
+component, then verify that it is part of this 
+module.
+2. If 'mat-expansion-panel-header' is a Web 
+Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:60:10:
+      60 Ôöé           <mat-expansion-panel-header>
+         ÔòÁ           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-panel-title' is not a known 
+element:
+1. If 'mat-panel-title' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-panel-title' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:61:12:
+      61 Ôöé             <mat-panel-title>
+         ÔòÁ             ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:62:14:
+      62 Ôöé               
+<mat-icon>person</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-action-list' is not a known 
+element:
+1. If 'mat-action-list' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-action-list' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:66:10:
+      66 Ôöé           <mat-action-list>
+         ÔòÁ           ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:68:14:
+      68 Ôöé               
+<mat-icon>search</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:72:14:
+      72 Ôöé               
+<mat-icon>add_circle_outline</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:76:14:
+      76 Ôöé               <mat-icon>edit</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-accordion' is not a known 
+element:
+1. If 'mat-accordion' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-accordion' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:84:6:
+      84 Ôöé       <mat-accordion multi="true">
+         ÔòÁ       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-expansion-panel' is not a 
+known element:
+1. If 'mat-expansion-panel' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-expansion-panel' is a Web Component then 
+add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:85:8:
+      85 Ôöé         <mat-expansion-panel>
+         ÔòÁ         ~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-expansion-panel-header' is 
+not a known element:
+1. If 'mat-expansion-panel-header' is an Angular 
+component, then verify that it is part of this 
+module.
+2. If 'mat-expansion-panel-header' is a Web 
+Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:86:10:
+      86 Ôöé           <mat-expansion-panel-header>
+         ÔòÁ           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-panel-title' is not a known 
+element:
+1. If 'mat-panel-title' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-panel-title' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:87:12:
+      87 Ôöé             <mat-panel-title>
+         ÔòÁ             ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:88:14:
+      88 Ôöé               
+<mat-icon>account_balance</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-action-list' is not a known 
+element:
+1. If 'mat-action-list' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-action-list' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:92:10:
+      92 Ôöé           <mat-action-list>
+         ÔòÁ           ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:94:14:
+      94 Ôöé               
+<mat-icon>add_circle_outline</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:98:14:
+      98 Ôöé               
+<mat-icon>search</mat-icon>
+         ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:102:14:
+      102 Ôöé               <mat-icon>edit</mat-icon>
+          ÔòÁ               ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-list-item' is not a known 
+element:
+1. If 'mat-list-item' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-list-item' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:110:6:
+      110 Ôöé       <mat-list-item>
+          ÔòÁ       ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-icon' is not a known element:
+1. If 'mat-icon' is an Angular component, then 
+verify that it is part of this module.
+2. If 'mat-icon' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:112:10:
+      112 Ôöé           <mat-icon>security</mat-icon>
+          ÔòÁ           ~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'mat-drawer-content' is not a 
+known element:
+1. If 'mat-drawer-content' is an Angular component, 
+then verify that it is part of this module.
+2. If 'mat-drawer-content' is a Web Component then 
+add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@NgModule.schemas' of this component to suppress 
+this message. [plugin angular-compiler]
+
+    src/app/navbar/navbar.component.html:120:2:
+      120 Ôöé   <mat-drawer-content>
+          ÔòÁ   ~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'router-outlet' is not a known 
+element:
+1. If 'router-outlet' is an Angular component, then 
+verify that it is part of this module.
+2. If 'router-outlet' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/navbar/navbar.component.html:122:6:
+      122 Ôöé       <router-outlet></router-outlet>
+          ÔòÁ       ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NavbarComponent.
+
+    src/app/navbar/navbar.component.ts:6:15:
+      6 Ôöé   templateUrl: './navbar.component.html',
+        ÔòÁ                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'formGroup' since it 
+isn't a known property of 'form'. [plugin 
+angular-compiler]
+
+    src/app/new-customer/new-customer.component.html:
+9:50:
+      9 Ôöé ...gSubmit)="handleSaveCustomer()" 
+[formGroup]="newCustomerFormGroup">
+        ÔòÁ                                    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component 
+NewCustomerComponent.
+
+    
+src/app/new-customer/new-customer.component.ts:10:15:
+      10 Ôöé   templateUrl: 
+'./new-customer.component.html',
+         ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'app-navbar' is not a known 
+element:
+1. If 'app-navbar' is an Angular component, then 
+verify that it is part of this module.
+2. If 'app-navbar' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' 
+of this component to suppress this message. [plugin 
+angular-compiler]
+
+    src/app/template/template.component.html:0:0:
+      0 Ôöé 
+        ÔòÁ ^
+
+  Error occurs in the template of component 
+TemplateComponent.
+
+    src/app/template/template.component.ts:5:15:
+      5 Ôöé   templateUrl: 
+'./template.component.html',
+        ÔòÁ                
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+

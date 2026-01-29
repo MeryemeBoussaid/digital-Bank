@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {jwtDecode} from "jwt-decode";
-import {Router} from "@angular/router";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { jwtDecode } from "jwt-decode";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,18 @@ export class AuthService {
   }
   isAdmin(): boolean {
     return this.roles && this.roles.includes('ADMIN');
+  }
+
+  isUser(): boolean {
+    return this.roles && this.roles.includes('USER');
+  }
+
+  isManager(): boolean {
+    return this.roles && this.roles.includes('MANAGER');
+  }
+
+  hasRole(role: string): boolean {
+    return this.roles && this.roles.includes(role);
   }
 
   public login(username: string, password: string) {
