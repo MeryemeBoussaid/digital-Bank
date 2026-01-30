@@ -18,6 +18,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { NewAccountComponent } from './new-account/new-account.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
@@ -48,9 +49,18 @@ const routes: Routes = [
     children: [
       { path: "home", component: HomeComponent },
       { path: "profile", component: ProfilComponent },
-      { path: 'not-authorized', component: NotAuthorizedComponent },
+      { path: "not-authorized", component: NotAuthorizedComponent },
     ]
   },
+  {
+    path: "customer",
+    component: TemplateComponent,
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: "dashboard", component: CustomerDashboardComponent },
+    ]
+  },
+  { path: "notAuthorized", component: NotAuthorizedComponent },
 ];
 
 @NgModule({

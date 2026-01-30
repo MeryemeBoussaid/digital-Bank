@@ -1,0 +1,1029 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+\geometry{margin=2.5cm}
+
+% Configuration des liens hypertexte
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Rapport Projet Digital Banking},
+    pdfpagemode=FullScreen,
+}
+
+% Configuration du code source
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red}
+}
+
+% En-tête et pied de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Digital Banking Application}
+\fancyhead[R]{ENSA Tanger}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\LARGE \textbf{École Nationale des Sciences Appliquées de Tanger}}\\[0.5cm]
+    {\large ENSA Tanger}\\[2cm]
+    
+    \rule{\linewidth}{0.5mm}\\[0.4cm]
+    {\huge \textbf{Digital Banking Application}}\\[0.2cm]
+    {\Large Plateforme de Gestion Bancaire Digitale}\\[0.2cm]
+    \rule{\linewidth}{0.5mm}\\[1.5cm]
+    
+    {\large \textbf{Projet Libre}}\\[2cm]
+    
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft}
+            \textbf{Réalisé par :}\\
+            \begin{itemize}
+                \item Meryeme BOUSSAID
+                \item Safaa BOUHNINE
+                \item Ibtissam AIDOUN
+                \item Chaimae AZZOUZ
+            \end{itemize}
+        \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \textbf{Encadré par :}\\
+            M. Badir HASSAN
+        \end{flushright}
+    \end{minipage}
+    
+    \vfill
+    
+    {\large Année Universitaire 2025-2026}
+    
+\end{titlepage}
+
+% Page de remerciements
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+Nous tenons à exprimer notre profonde gratitude à toutes les personnes qui ont contribué à la réalisation de ce projet.
+
+Nos remerciements s'adressent en premier lieu à notre encadrant, \textbf{Monsieur Badir HASSAN}, pour son soutien, ses conseils précieux et son accompagnement tout au long de ce projet. Sa disponibilité et son expertise nous ont été d'une aide inestimable.
+
+Nous remercions également l'ensemble du corps professoral de l'\textbf{École Nationale des Sciences Appliquées de Tanger} pour la formation de qualité qu'ils nous ont dispensée et qui nous a permis d'acquérir les compétences nécessaires pour mener à bien ce projet.
+
+Enfin, nous exprimons notre reconnaissance à nos familles et amis pour leur soutien moral et leurs encouragements constants.
+
+% Résumé
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+Ce rapport présente le développement d'une application web de gestion bancaire digitale nommée \textbf{Digital Banking}. Cette plateforme permet la gestion complète des clients, des comptes bancaires et des opérations financières (débits et crédits).
+
+Le projet a été développé en utilisant une architecture moderne basée sur :
+\begin{itemize}
+    \item \textbf{Backend} : Spring Boot avec Spring Data JPA, Spring Security et JWT pour l'authentification
+    \item \textbf{Frontend} : Angular avec Bootstrap et Angular Material pour l'interface utilisateur
+    \item \textbf{Base de données} : MySQL pour la persistance des données
+\end{itemize}
+
+L'application offre deux types de comptes (comptes courants et comptes épargne), un système d'authentification sécurisé, un tableau de bord avec statistiques et graphiques, ainsi qu'une gestion complète des transactions bancaires.
+
+Ce projet illustre l'application des concepts de développement web full-stack, d'architecture REST, de sécurité applicative et d'interface utilisateur moderne.
+
+\textbf{Mots-clés :} Banque digitale, Spring Boot, Angular, REST API, JWT, Gestion bancaire
+
+% Table des matières
+\tableofcontents
+
+% Liste des figures
+\listoffigures
+
+% Chapitre 1 : Introduction
+\chapter{Introduction}
+
+\section{Contexte du projet}
+
+Dans un monde de plus en plus digitalisé, les institutions bancaires se tournent vers des solutions technologiques pour améliorer leurs services et offrir une meilleure expérience client. La digitalisation des services bancaires permet non seulement de réduire les coûts opérationnels, mais aussi d'offrir aux clients un accès 24/7 à leurs comptes et transactions.
+
+Ce projet s'inscrit dans cette dynamique de transformation digitale. Il vise à développer une plateforme web complète de gestion bancaire qui permet aux utilisateurs de gérer leurs comptes, effectuer des opérations bancaires et consulter leurs historiques de transactions de manière sécurisée et intuitive.
+
+\section{Objectifs du projet}
+
+Les objectifs principaux de ce projet sont :
+
+\begin{itemize}
+    \item Développer une application web full-stack moderne et sécurisée
+    \item Implémenter un système de gestion des clients et des comptes bancaires
+    \item Créer un système d'authentification robuste basé sur JWT
+    \item Offrir une interface utilisateur intuitive et responsive
+    \item Mettre en place un tableau de bord avec visualisation des données
+    \item Gérer différents types de comptes (courants et épargne)
+    \item Assurer la traçabilité des opérations bancaires
+\end{itemize}
+
+\section{Organisation du rapport}
+
+Ce rapport est organisé en plusieurs chapitres :
+
+\begin{itemize}
+    \item \textbf{Chapitre 2} : Présente l'analyse et la conception du système
+    \item \textbf{Chapitre 3} : Détaille les technologies utilisées
+    \item \textbf{Chapitre 4} : Décrit l'architecture du projet
+    \item \textbf{Chapitre 5} : Explique l'implémentation backend
+    \item \textbf{Chapitre 6} : Présente l'implémentation frontend
+    \item \textbf{Chapitre 7} : Montre les fonctionnalités et captures d'écran
+    \item \textbf{Chapitre 8} : Conclut et présente les perspectives
+\end{itemize}
+
+% Chapitre 2 : Analyse et Conception
+\chapter{Analyse et Conception}
+
+\section{Analyse des besoins}
+
+\subsection{Besoins fonctionnels}
+
+L'application doit permettre de :
+
+\begin{enumerate}
+    \item \textbf{Gestion des utilisateurs}
+    \begin{itemize}
+        \item Authentification sécurisée (admin, utilisateur, client)
+        \item Gestion des profils utilisateurs
+        \item Modification des mots de passe
+    \end{itemize}
+    
+    \item \textbf{Gestion des clients}
+    \begin{itemize}
+        \item Création de nouveaux clients
+        \item Recherche de clients
+        \item Modification des informations clients
+        \item Suppression de clients
+    \end{itemize}
+    
+    \item \textbf{Gestion des comptes}
+    \begin{itemize}
+        \item Création de comptes courants et épargne
+        \item Consultation des détails de compte
+        \item Visualisation de l'historique des opérations
+        \item Recherche de comptes
+    \end{itemize}
+    
+    \item \textbf{Gestion des opérations}
+    \begin{itemize}
+        \item Effectuer des débits
+        \item Effectuer des crédits
+        \item Effectuer des virements entre comptes
+        \item Consultation de l'historique paginé
+    \end{itemize}
+    
+    \item \textbf{Tableau de bord}
+    \begin{itemize}
+        \item Affichage des statistiques
+        \item Graphiques de visualisation
+        \item Alertes sur les comptes (soldes négatifs, soldes faibles)
+        \item Vue d'ensemble des transactions récentes
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Besoins non fonctionnels}
+
+\begin{itemize}
+    \item \textbf{Sécurité} : Authentification JWT, protection des endpoints, validation des données
+    \item \textbf{Performance} : Temps de réponse rapide, pagination des résultats
+    \item \textbf{Ergonomie} : Interface intuitive, responsive design
+    \item \textbf{Maintenabilité} : Code structuré, architecture en couches
+    \item \textbf{Scalabilité} : Architecture permettant l'évolution future
+\end{itemize}
+
+\section{Modélisation}
+
+\subsection{Diagramme de classes}
+
+Le modèle de données comprend les entités principales suivantes :
+
+\begin{itemize}
+    \item \textbf{Customer} : Représente un client de la banque
+    \item \textbf{BankAccount} : Classe abstraite pour les comptes bancaires
+    \item \textbf{CurrentAccount} : Compte courant (hérite de BankAccount)
+    \item \textbf{SavingAccount} : Compte épargne (hérite de BankAccount)
+    \item \textbf{AccountOperation} : Représente une opération bancaire
+\end{itemize}
+
+\subsection{Relations entre entités}
+
+\begin{itemize}
+    \item Un \textbf{Customer} peut avoir plusieurs \textbf{BankAccount} (relation 1:N)
+    \item Un \textbf{BankAccount} appartient à un seul \textbf{Customer}
+    \item Un \textbf{BankAccount} peut avoir plusieurs \textbf{AccountOperation} (relation 1:N)
+    \item Une \textbf{AccountOperation} est liée à un seul \textbf{BankAccount}
+\end{itemize}
+
+% Chapitre 3 : Technologies Utilisées
+\chapter{Technologies Utilisées}
+
+\section{Backend}
+
+\subsection{Spring Boot 3.2.5}
+
+Spring Boot est le framework principal utilisé pour le développement du backend. Il offre :
+\begin{itemize}
+    \item Configuration automatique
+    \item Serveur embarqué (Tomcat)
+    \item Gestion des dépendances simplifiée
+    \item Support des microservices
+\end{itemize}
+
+\subsection{Spring Data JPA}
+
+Spring Data JPA facilite l'accès aux données en fournissant :
+\begin{itemize}
+    \item Repositories prédéfinis
+    \item Requêtes dérivées des noms de méthodes
+    \item Support de la pagination
+    \item Gestion automatique des transactions
+\end{itemize}
+
+\subsection{Spring Security avec OAuth2}
+
+La sécurité est assurée par :
+\begin{itemize}
+    \item Spring Security pour l'authentification et l'autorisation
+    \item OAuth2 Authorization Server pour la gestion des tokens
+    \item JWT (JSON Web Tokens) pour les sessions stateless
+\end{itemize}
+
+\subsection{MySQL 8.0}
+
+Base de données relationnelle utilisée pour :
+\begin{itemize}
+    \item Persistance des données
+    \item Support des transactions ACID
+    \item Performances optimales
+\end{itemize}
+
+\subsection{Springdoc OpenAPI (Swagger)}
+
+Documentation automatique des API REST :
+\begin{itemize}
+    \item Interface Swagger UI
+    \item Spécification OpenAPI 3.0
+    \item Tests interactifs des endpoints
+\end{itemize}
+
+\section{Frontend}
+
+\subsection{Angular 17}
+
+Framework frontend moderne offrant :
+\begin{itemize}
+    \item Architecture basée sur les composants
+    \item Two-way data binding
+    \item Dependency injection
+    \item Routing avancé
+    \item Reactive programming avec RxJS
+\end{itemize}
+
+\subsection{Angular Material}
+
+Bibliothèque de composants UI :
+\begin{itemize}
+    \item Composants Material Design
+    \item Responsive et accessible
+    \item Thèmes personnalisables
+\end{itemize}
+
+\subsection{Bootstrap 5}
+
+Framework CSS pour :
+\begin{itemize}
+    \item Grille responsive
+    \item Composants UI prédéfinis
+    \item Utilitaires CSS
+\end{itemize}
+
+\subsection{Chart.js / ng2-charts}
+
+Visualisation de données :
+\begin{itemize}
+    \item Graphiques interactifs
+    \item Différents types de charts (bar, line, pie, etc.)
+    \item Responsive et animés
+\end{itemize}
+
+\subsection{SweetAlert2}
+
+Notifications et alertes élégantes :
+\begin{itemize}
+    \item Modales personnalisables
+    \item Confirmations d'actions
+    \item Messages de succès/erreur
+\end{itemize}
+
+\section{Outils de développement}
+
+\begin{itemize}
+    \item \textbf{Maven} : Gestion des dépendances backend
+    \item \textbf{npm} : Gestion des packages frontend
+    \item \textbf{Git} : Contrôle de version
+    \item \textbf{IntelliJ IDEA / VS Code} : Environnements de développement
+\end{itemize}
+
+% Chapitre 4 : Architecture
+\chapter{Architecture du Projet}
+
+\section{Architecture globale}
+
+Le projet suit une architecture client-serveur avec une séparation claire entre le frontend et le backend :
+
+\begin{itemize}
+    \item \textbf{Frontend} : Application Angular (port 4200)
+    \item \textbf{Backend} : API REST Spring Boot (port 8080)
+    \item \textbf{Base de données} : MySQL
+\end{itemize}
+
+\section{Architecture backend}
+
+Le backend suit une architecture en couches :
+
+\subsection{Couche Entités (Entities)}
+
+Contient les classes JPA représentant le modèle de données :
+\begin{itemize}
+    \item Customer
+    \item BankAccount (abstract)
+    \item CurrentAccount
+    \item SavingAccount
+    \item AccountOperation
+\end{itemize}
+
+\subsection{Couche Repository}
+
+Interfaces Spring Data JPA pour l'accès aux données :
+\begin{itemize}
+    \item CustomerRepository
+    \item BankAccountRepository
+    \item AccountOperationRepository
+\end{itemize}
+
+\subsection{Couche Service}
+
+Logique métier de l'application :
+\begin{itemize}
+    \item BankAccountService (interface)
+    \item BankAccountServiceImpl (implémentation)
+\end{itemize}
+
+\subsection{Couche DTO}
+
+Objets de transfert de données :
+\begin{itemize}
+    \item CustomerDTO
+    \item BankAccountDTO
+    \item CurrentBankAccountDTO
+    \item SavingBankAccountDTO
+    \item AccountOperationDTO
+    \item AccountHistoryDTO
+\end{itemize}
+
+\subsection{Couche Mappers}
+
+Conversion entre entités et DTOs :
+\begin{itemize}
+    \item BankAccountMapperImpl
+\end{itemize}
+
+\subsection{Couche Web (Controllers)}
+
+Endpoints REST :
+\begin{itemize}
+    \item CustomerRestController
+    \item BankAccountRestAPI
+    \item SecurityController
+\end{itemize}
+
+\subsection{Couche Sécurité}
+
+Configuration de la sécurité :
+\begin{itemize}
+    \item SecurityConfig
+    \item Gestion JWT
+    \item Autorisation basée sur les rôles
+\end{itemize}
+
+\section{Architecture frontend}
+
+L'application Angular est organisée en modules et composants :
+
+\subsection{Composants principaux}
+
+\begin{itemize}
+    \item \textbf{LoginComponent} : Authentification
+    \item \textbf{NavbarComponent} : Navigation
+    \item \textbf{DashboardComponent} : Tableau de bord
+    \item \textbf{CustomersComponent} : Liste des clients
+    \item \textbf{AccountsComponent} : Gestion des comptes
+    \item \textbf{TransactionsComponent} : Historique des transactions
+    \item \textbf{AlertsComponent} : Alertes sur les comptes
+\end{itemize}
+
+\subsection{Services}
+
+\begin{itemize}
+    \item \textbf{AuthService} : Gestion de l'authentification
+    \item \textbf{AccountsService} : Communication avec l'API des comptes
+    \item \textbf{CustomerService} : Communication avec l'API des clients
+\end{itemize}
+
+\subsection{Guards}
+
+\begin{itemize}
+    \item \textbf{AuthGuard} : Protection des routes
+    \item Vérification des rôles utilisateur
+\end{itemize}
+
+% Chapitre 5 : Implémentation Backend
+\chapter{Implémentation Backend}
+
+\section{Configuration du projet}
+
+\subsection{Dépendances Maven}
+
+Les principales dépendances utilisées :
+
+\begin{lstlisting}[language=XML]
+<dependencies>
+    <!-- Spring Boot Starter Web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    
+    <!-- Spring Boot Starter Data JPA -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    
+    <!-- MySQL Connector -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.33</version>
+    </dependency>
+    
+    <!-- Spring Security OAuth2 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
+    </dependency>
+    
+    <!-- Springdoc OpenAPI -->
+    <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.1.0</version>
+    </dependency>
+</dependencies>
+\end{lstlisting}
+
+\subsection{Configuration de la base de données}
+
+Configuration dans \texttt{application.properties} :
+
+\begin{lstlisting}
+spring.datasource.url=jdbc:mysql://localhost:3306/bank?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+spring.jpa.show-sql=true
+\end{lstlisting}
+
+\section{Modèle de données}
+
+\subsection{Entité Customer}
+
+\begin{lstlisting}[language=Java]
+@Entity
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
+public class Customer {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+    private String username;
+    private String password;
+    
+    @OneToMany(mappedBy = "customer")
+    private List<BankAccount> bankAccounts;
+}
+\end{lstlisting}
+
+\subsection{Entité BankAccount}
+
+\begin{lstlisting}[language=Java]
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYPE", length = 4)
+@Data @NoArgsConstructor @AllArgsConstructor
+public abstract class BankAccount {
+    @Id
+    private String id;
+    private double balance;
+    private Date creationDate;
+    
+    @Enumerated(EnumType.STRING)
+    private AccountStatus status;
+    
+    @ManyToOne
+    private Customer customer;
+    
+    @OneToMany(mappedBy = "bankAccount")
+    private List<AccountOperation> accountOperations;
+}
+\end{lstlisting}
+
+\section{API REST}
+
+\subsection{Endpoints principaux}
+
+\begin{itemize}
+    \item \texttt{GET /customers} : Liste des clients
+    \item \texttt{GET /customers/\{id\}} : Détails d'un client
+    \item \texttt{POST /customers} : Créer un client
+    \item \texttt{PUT /customers/\{id\}} : Modifier un client
+    \item \texttt{DELETE /customers/\{id\}} : Supprimer un client
+    \item \texttt{GET /accounts} : Liste des comptes
+    \item \texttt{GET /accounts/\{id\}} : Détails d'un compte
+    \item \texttt{POST /accounts/debit/\{id\}} : Effectuer un débit
+    \item \texttt{POST /accounts/credit/\{id\}} : Effectuer un crédit
+    \item \texttt{POST /accounts/transfer} : Effectuer un virement
+\end{itemize}
+
+\section{Sécurité}
+
+\subsection{Configuration Spring Security}
+
+La sécurité est configurée pour :
+\begin{itemize}
+    \item Autoriser l'accès public à certains endpoints (/auth/**, /h2-console/**)
+    \item Protéger les autres endpoints avec JWT
+    \item Gérer les rôles (ADMIN, USER, CUSTOMER)
+    \item Configurer CORS pour le frontend
+\end{itemize}
+
+\subsection{Authentification JWT}
+
+Le processus d'authentification :
+\begin{enumerate}
+    \item L'utilisateur envoie ses credentials
+    \item Le serveur valide et génère un JWT
+    \item Le client stocke le token
+    \item Les requêtes suivantes incluent le token dans l'en-tête Authorization
+\end{enumerate}
+
+% Chapitre 6 : Implémentation Frontend
+\chapter{Implémentation Frontend}
+
+\section{Structure du projet Angular}
+
+\subsection{Modules}
+
+\begin{itemize}
+    \item \textbf{AppModule} : Module principal
+    \item \textbf{AppRoutingModule} : Configuration des routes
+    \item \textbf{MaterialModule} : Import des composants Material
+\end{itemize}
+
+\subsection{Routing}
+
+Configuration des routes avec guards :
+
+\begin{lstlisting}[language=TypeScript]
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'admin/home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'admin/customers', component: CustomersComponent, canActivate: [AuthGuard] },
+  { path: 'admin/accounts', component: AccountsComponent, canActivate: [AuthGuard] },
+  { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'admin/transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+  { path: 'admin/alerts', component: AlertsComponent, canActivate: [AuthGuard] },
+];
+\end{lstlisting}
+
+\section{Services}
+
+\subsection{AuthService}
+
+Gestion de l'authentification :
+\begin{itemize}
+    \item Login/Logout
+    \item Stockage du token JWT
+    \item Vérification des rôles
+    \item Gestion du profil utilisateur
+\end{itemize}
+
+\subsection{AccountsService}
+
+Communication avec l'API des comptes :
+\begin{itemize}
+    \item Récupération des comptes
+    \item Opérations bancaires (débit, crédit, virement)
+    \item Consultation de l'historique
+\end{itemize}
+
+\section{Composants principaux}
+
+\subsection{Dashboard}
+
+Le tableau de bord affiche :
+\begin{itemize}
+    \item Statistiques globales (nombre de clients, comptes, transactions)
+    \item Graphiques de visualisation (Chart.js)
+    \item Transactions récentes
+    \item Alertes importantes
+\end{itemize}
+
+\subsection{Transactions}
+
+Fonctionnalités :
+\begin{itemize}
+    \item Affichage de toutes les transactions
+    \item Filtrage par type (CREDIT/DEBIT)
+    \item Recherche par description ou client
+    \item Statistiques (total crédits, total débits)
+    \item Données de démonstration si l'API est vide
+\end{itemize}
+
+\subsection{Alerts}
+
+Système d'alertes :
+\begin{itemize}
+    \item Comptes avec solde négatif (alertes critiques)
+    \item Comptes avec solde faible < 1000 MAD (avertissements)
+    \item Affichage des détails des comptes problématiques
+    \item Génération de données fictives pour démonstration
+\end{itemize}
+
+% Chapitre 7 : Fonctionnalités et Démonstration
+\chapter{Fonctionnalités et Démonstration}
+
+\section{Authentification}
+
+L'application propose un système d'authentification sécurisé avec :
+\begin{itemize}
+    \item Page de login avec validation
+    \item Support de différents types d'utilisateurs (Admin, User, Customer)
+    \item Stockage sécurisé du token JWT
+    \item Redirection automatique selon le rôle
+\end{itemize}
+
+\section{Gestion des clients}
+
+\subsection{Liste des clients}
+
+\begin{itemize}
+    \item Affichage paginé des clients
+    \item Recherche par nom ou email
+    \item Actions : Voir détails, Modifier, Supprimer
+\end{itemize}
+
+\subsection{Ajout de client}
+
+Formulaire avec validation pour :
+\begin{itemize}
+    \item Nom
+    \item Email
+    \item Username
+    \item Password
+\end{itemize}
+
+\subsection{Modification de client}
+
+Permet de mettre à jour les informations d'un client existant.
+
+\section{Gestion des comptes}
+
+\subsection{Création de compte}
+
+Deux types de comptes disponibles :
+\begin{itemize}
+    \item \textbf{Compte Courant} : avec découvert autorisé
+    \item \textbf{Compte Épargne} : avec taux d'intérêt
+\end{itemize}
+
+\subsection{Consultation de compte}
+
+Affichage détaillé :
+\begin{itemize}
+    \item Informations du compte (ID, solde, type)
+    \item Informations du client propriétaire
+    \item Historique paginé des opérations
+\end{itemize}
+
+\subsection{Opérations bancaires}
+
+\begin{itemize}
+    \item \textbf{Débit} : Retrait d'argent avec vérification du solde
+    \item \textbf{Crédit} : Dépôt d'argent
+    \item \textbf{Virement} : Transfert entre deux comptes
+\end{itemize}
+
+\section{Tableau de bord}
+
+Le dashboard offre une vue d'ensemble avec :
+\begin{itemize}
+    \item Cartes statistiques (clients, comptes, transactions)
+    \item Graphiques interactifs (Chart.js)
+    \item Liste des transactions récentes
+    \item Alertes sur les comptes problématiques
+\end{itemize}
+
+\section{Transactions}
+
+Page dédiée aux transactions avec :
+\begin{itemize}
+    \item Affichage de toutes les transactions du système
+    \item Filtres par type (CREDIT/DEBIT/ALL)
+    \item Recherche textuelle
+    \item Statistiques (total crédits, total débits, nombre total)
+    \item Données de démonstration automatiques
+\end{itemize}
+
+\section{Alertes}
+
+Système de monitoring des comptes :
+\begin{itemize}
+    \item Détection des comptes en solde négatif
+    \item Détection des comptes avec solde faible (< 1000 MAD)
+    \item Affichage des alertes critiques et avertissements
+    \item Tableaux détaillés des comptes problématiques
+\end{itemize}
+
+% Chapitre 8 : Conclusion
+\chapter{Conclusion et Perspectives}
+
+\section{Bilan du projet}
+
+Ce projet nous a permis de développer une application web complète de gestion bancaire en utilisant des technologies modernes et des bonnes pratiques de développement.
+
+\subsection{Objectifs atteints}
+
+\begin{itemize}
+    \item ✓ Développement d'une architecture full-stack moderne
+    \item ✓ Implémentation d'un système d'authentification sécurisé
+    \item ✓ Création d'une API REST complète et documentée
+    \item ✓ Développement d'une interface utilisateur intuitive et responsive
+    \item ✓ Mise en place d'un système de visualisation de données
+    \item ✓ Gestion complète des opérations bancaires
+    \item ✓ Système d'alertes et de monitoring
+\end{itemize}
+
+\subsection{Compétences acquises}
+
+Ce projet nous a permis de développer nos compétences dans :
+\begin{itemize}
+    \item Le développement backend avec Spring Boot
+    \item Le développement frontend avec Angular
+    \item La conception d'API REST
+    \item La sécurité applicative (JWT, Spring Security)
+    \item La gestion de bases de données relationnelles
+    \item L'architecture logicielle en couches
+    \item Le travail en équipe
+\end{itemize}
+
+\section{Difficultés rencontrées}
+
+Au cours du développement, nous avons rencontré plusieurs défis :
+\begin{itemize}
+    \item Configuration de Spring Security avec JWT
+    \item Gestion des relations JPA complexes
+    \item Synchronisation frontend-backend
+    \item Gestion des erreurs et validation des données
+    \item Optimisation des performances
+\end{itemize}
+
+Ces difficultés ont été surmontées grâce à la recherche, l'entraide au sein de l'équipe et les conseils de notre encadrant.
+
+\section{Perspectives d'amélioration}
+
+Plusieurs améliorations peuvent être envisagées :
+
+\subsection{Fonctionnalités}
+
+\begin{itemize}
+    \item Ajout de notifications en temps réel
+    \item Système de messagerie interne
+    \item Export de relevés bancaires (PDF)
+    \item Planification d'opérations récurrentes
+    \item Gestion des cartes bancaires
+    \item Système de prêts et crédits
+    \item Application mobile (iOS/Android)
+\end{itemize}
+
+\subsection{Techniques}
+
+\begin{itemize}
+    \item Migration vers une architecture microservices
+    \item Mise en place de tests automatisés (unitaires, intégration)
+    \item Déploiement avec Docker et Kubernetes
+    \item Intégration continue (CI/CD)
+    \item Monitoring et logging avancés
+    \item Cache distribué (Redis)
+    \item Message broker (RabbitMQ, Kafka)
+\end{itemize}
+
+\subsection{Sécurité}
+
+\begin{itemize}
+    \item Authentification à deux facteurs (2FA)
+    \item Chiffrement des données sensibles
+    \item Audit trail complet
+    \item Protection contre les attaques (CSRF, XSS, SQL Injection)
+    \item Gestion des sessions avancée
+\end{itemize}
+
+\section{Conclusion finale}
+
+Ce projet de Digital Banking a été une expérience enrichissante qui nous a permis de mettre en pratique nos connaissances théoriques et d'acquérir de nouvelles compétences techniques.
+
+Nous avons réussi à développer une application fonctionnelle, sécurisée et moderne qui répond aux besoins de gestion bancaire digitale. Le travail en équipe, l'encadrement de qualité et notre motivation ont été les clés de la réussite de ce projet.
+
+Nous sommes fières du résultat obtenu et conscientes que ce projet constitue une base solide pour de futurs développements dans le domaine des applications bancaires digitales.
+
+% Bibliographie
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+\bibitem{spring}
+\textit{Spring Framework Documentation}, 
+\url{https://spring.io/projects/spring-framework}
+
+\bibitem{springboot}
+\textit{Spring Boot Reference Guide}, 
+\url{https://docs.spring.io/spring-boot/docs/current/reference/html/}
+
+\bibitem{angular}
+\textit{Angular Documentation}, 
+\url{https://angular.io/docs}
+
+\bibitem{jwt}
+\textit{JSON Web Tokens Introduction}, 
+\url{https://jwt.io/introduction}
+
+\bibitem{material}
+\textit{Angular Material Documentation}, 
+\url{https://material.angular.io/}
+
+\bibitem{chartjs}
+\textit{Chart.js Documentation}, 
+\url{https://www.chartjs.org/docs/latest/}
+
+\bibitem{mysql}
+\textit{MySQL Documentation}, 
+\url{https://dev.mysql.com/doc/}
+
+\bibitem{swagger}
+\textit{Swagger/OpenAPI Specification}, 
+\url{https://swagger.io/specification/}
+
+\end{thebibliography}
+
+% Annexes
+\appendix
+
+\chapter{Installation et Configuration}
+
+\section{Prérequis}
+
+\begin{itemize}
+    \item Java JDK 21
+    \item Node.js 18+ et npm
+    \item MySQL 8.0
+    \item Maven 3.8+
+    \item Git
+\end{itemize}
+
+\section{Installation du backend}
+
+\begin{lstlisting}[language=bash]
+# Cloner le repository
+git clone https://github.com/votre-repo/digital-banking.git
+cd digital-banking
+
+# Configurer la base de donnees dans application.properties
+
+# Compiler et lancer
+mvn clean install
+mvn spring-boot:run
+\end{lstlisting}
+
+Le backend sera accessible sur \texttt{http://localhost:8080}
+
+\section{Installation du frontend}
+
+\begin{lstlisting}[language=bash]
+# Naviguer vers le dossier frontend
+cd frontend-bank
+
+# Installer les dependances
+npm install
+
+# Lancer le serveur de developpement
+ng serve
+\end{lstlisting}
+
+Le frontend sera accessible sur \texttt{http://localhost:4200}
+
+\section{Accès à l'application}
+
+\subsection{Utilisateurs par défaut}
+
+\begin{itemize}
+    \item \textbf{Admin} : username = \texttt{admin}, password = \texttt{123}
+    \item \textbf{User} : username = \texttt{user1}, password = \texttt{123}
+    \item \textbf{Clients} : mohamed/fatima/ahmed, password = \texttt{123}
+\end{itemize}
+
+\subsection{Swagger UI}
+
+La documentation API est accessible sur : \texttt{http://localhost:8080/swagger-ui.html}
+
+\chapter{Structure du Code}
+
+\section{Structure Backend}
+
+\begin{verbatim}
+src/main/java/ma/enset/digitalbanking/
+├── entities/
+│   ├── Customer.java
+│   ├── BankAccount.java
+│   ├── CurrentAccount.java
+│   ├── SavingAccount.java
+│   └── AccountOperation.java
+├── repositories/
+│   ├── CustomerRepository.java
+│   ├── BankAccountRepository.java
+│   └── AccountOperationRepository.java
+├── services/
+│   ├── BankAccountService.java
+│   └── BankAccountServiceImpl.java
+├── dtos/
+│   ├── CustomerDTO.java
+│   ├── BankAccountDTO.java
+│   └── AccountOperationDTO.java
+├── mappers/
+│   └── BankAccountMapperImpl.java
+├── web/
+│   ├── CustomerRestController.java
+│   ├── BankAccountRestAPI.java
+│   └── SecurityController.java
+└── security/
+    └── SecurityConfig.java
+\end{verbatim}
+
+\section{Structure Frontend}
+
+\begin{verbatim}
+src/app/
+├── components/
+│   ├── login/
+│   ├── navbar/
+│   ├── dashboard/
+│   ├── customers/
+│   ├── accounts/
+│   ├── transactions/
+│   └── alerts/
+├── services/
+│   ├── auth.service.ts
+│   ├── accounts.service.ts
+│   └── customer.service.ts
+├── guards/
+│   └── auth.guard.ts
+└── models/
+    ├── customer.model.ts
+    └── account.model.ts
+\end{verbatim}
+
+\end{document}

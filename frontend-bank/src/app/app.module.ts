@@ -40,6 +40,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { FormsModule } from '@angular/forms';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { FormsModule } from '@angular/forms';
     NewAccountComponent,
     TransactionsComponent,
     AlertsComponent,
+    CustomerDashboardComponent,
   ],
   imports: [
     BrowserModule,

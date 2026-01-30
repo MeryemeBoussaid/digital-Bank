@@ -1,0 +1,80 @@
+<div class="container mt-4">
+    <h2><i class="bi bi-person-circle"></i> Welcome, {{ customerName }}!</h2>
+    <p class="text-muted">Customer ID: {{ customerId }}</p>
+
+    <hr>
+
+    <!-- Total Balance Card -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h5>Total Balance</h5>
+                    <h2>{{ getTotalBalance() | number: '1.2-2' }} MAD</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h5>Number of Accounts</h5>
+                    <h2>{{ customerAccounts.length }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="text-center my-5">
+        <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+        <p class="mt-3">Loading your accounts...</p>
+    </div>
+
+    <!-- Accounts List -->
+    <div *ngIf="!loading" class="card">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">My Accounts</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Account ID</th>
+                            <th>Type</th>
+                            <th>Creation Date</th>
+                            <th>Status</th>
+                            <th class="text-end">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let account of customerAccounts">
+                            <td><code>{{ account.id }}</code></td>
+                            <td>
+                                <span class="badge"
+                                    [ngClass]="account.type === 'CurrentAccount' ? 'bg-primary' : 'bg-success'">
+                                    {{ account.type === 'CurrentAccount' ? 'Current' : 'Saving' }}
+                                </span>
+                            </td>
+                            <td>{{ account.creationDate | date: 'dd/MM/yyyy' }}</td>
+                            <td><span class="badge bg-success">{{ account.status }}</span></td>
+                            <td class="text-end">
+                                <strong>{{ account.balance | number: '1.2-2' }} MAD</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="customerAccounts.length === 0" class="text-center text-muted py-4">
+                    You don't have any accounts yet. Please contact your bank administrator.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Alert -->
+    <div class="alert alert-info mt-4">
+        <i class="bi bi-info-circle"></i>
+        <strong>Note:</strong> To make transactions or transfers, please visit your nearest branch or contact customer
+        service.
+    </div>
+</div>

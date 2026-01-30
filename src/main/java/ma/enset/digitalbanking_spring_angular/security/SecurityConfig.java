@@ -36,15 +36,17 @@ public class SecurityConfig {
 
     @Value("${jwt.secret}")
     private String secretKey;
+
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         PasswordEncoder passwordEncoder = passwordEncoder();
         return new InMemoryUserDetailsManager(
-                User.withUsername("admin").password(passwordEncoder.encode("123")).roles("ADMIN","MANAGER","USER").build(),
+                User.withUsername("admin").password(passwordEncoder.encode("123")).roles("ADMIN", "MANAGER", "USER")
+                        .build(),
                 User.withUsername("manager").password(passwordEncoder.encode("123")).roles("MANAGER").build(),
-                User.withUsername("user").password(passwordEncoder.encode("123")).roles("USER").build()
-        );
+                User.withUsername("user").password(passwordEncoder.encode("123")).roles("USER").build());
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -58,6 +60,8 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/customers/by-username/**").permitAll()
+                        .requestMatchers("/customers/*/accounts").permitAll()
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
                 .build();

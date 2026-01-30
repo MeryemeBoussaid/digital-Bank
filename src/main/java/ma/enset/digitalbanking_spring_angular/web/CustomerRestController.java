@@ -25,7 +25,6 @@ public class CustomerRestController {
         return bankAccountService.listCustomers();
     }
 
-
     @GetMapping("/customers/{id}")
     @PreAuthorize("hasAuthority('SCOPE_ROLE_ADMIN')")
     public CustomerDTO getCustomer(@PathVariable(name = "id") Long CustomerId) throws CustomerNotFoundException {
@@ -40,7 +39,7 @@ public class CustomerRestController {
 
     @PutMapping("/customers/{id}")
     @PreAuthorize("hasAuthority('SCOPE_ROLE_ADMIN')")
-    public CustomerDTO updateCustomer(@PathVariable Long id,@RequestBody CustomerDTO customerDTO) {
+    public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO) {
         customerDTO.setId(id);
         return bankAccountService.updateCustomer(customerDTO);
     }
@@ -54,5 +53,33 @@ public class CustomerRestController {
     @GetMapping("/customers/search")
     public List<CustomerDTO> searchCustomers(@RequestParam(name = "keyword", defaultValue = "") String keyword) {
         return bankAccountService.searchCustomers("%" + keyword + "%");
+    }
+
+    // Get customer by username (for authentication)
+    @GetMapping("/customers/by-username/{username}")
+    public CustomerDTO getCustomerByUsername(@PathVariable String username) {
+        return bankAccountService.listCustomers().stream()
+                .filter(c -> username.equals(c.getUsername()))
+                .findFirst()
+                .orElse(null);
+    }
+
+    // Get accounts for a specific customer
+    @GetMapping("/customers/{customerId}/accounts")
+    public List<ma.enset.digitalbanking_spring_angular.dtos.BankAccountDTO> getCustomerAccounts(
+            @PathVariable Long customerId) {
+        return bankAccountService.listBankAccounts().stream()
+                .filter(account -> {
+                    ma.enset.digitalbanking_spring_angular.dtos.CustomerDTO customer = null;
+                    if (account instanceof ma.enset.digitalbanking_spring_angular.dtos.CurrentBankAccountDTO) {
+                        customer = ((ma.enset.digitalbanking_spring_angular.dtos.CurrentBankAccountDTO) account)
+                                .getCustomerDTO();
+                    } else if (account instanceof ma.enset.digitalbanking_spring_angular.dtos.SavingBankAccountDTO) {
+                        customer = ((ma.enset.digitalbanking_spring_angular.dtos.SavingBankAccountDTO) account)
+                                .getCustomerDTO();
+                    }
+                    return customer != null && customer.getId().equals(customerId);
+                })
+                .collect(java.util.stream.Collectors.toList());
     }
 }

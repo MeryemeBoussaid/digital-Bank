@@ -34,33 +34,39 @@ public class DigitalBankingSpringAngularApplication {
     @Bean
     static CommandLineRunner commandLineRunner(BankAccountService bankAccountService) {
         return args -> {
-            Stream.of("Zaid", "Hassan", "Yassine")
-                    .forEach(name -> bankAccountService.saveCustomerDTO(CustomerDTO.builder()
-                            .name(name)
-                            .email(name + "@gmail.com")
-                            .build()));
-            // Create bank accounts
-            bankAccountService.listCustomers().forEach(customer -> {
-                try {
-                    bankAccountService.saveCurrentAccountDTO(Math.random() * 9000, 500, customer.getId());
-                    bankAccountService.saveSavingAccountDTO(Math.random() * 9000, 5.5, customer.getId());
+            // Create customers with authentication credentials only if they don't exist
+            if (bankAccountService.listCustomers().isEmpty()) {
+                Stream.of("Mohamed", "Fatima", "Ahmed")
+                        .forEach(name -> bankAccountService.saveCustomerDTO(CustomerDTO.builder()
+                                .name(name)
+                                .email(name.toLowerCase() + "@gmail.com")
+                                .username(name.toLowerCase())
+                                .password("123")
+                                .build()));
 
-                } catch (CustomerNotFoundException e) {
-                    e.printStackTrace();
-                }
-            });
+                // Create bank accounts
+                bankAccountService.listCustomers().forEach(customer -> {
+                    try {
+                        bankAccountService.saveCurrentAccountDTO(Math.random() * 9000, 500, customer.getId());
+                        bankAccountService.saveSavingAccountDTO(Math.random() * 9000, 5.5, customer.getId());
 
-            List<BankAccountDTO> bankAccounts = bankAccountService.listBankAccounts();
-            for (BankAccountDTO bankAccount : bankAccounts) {
-                for (int i = 0; i < 5; i++) {
-                    String accountId;
-                    if (bankAccount instanceof CurrentBankAccountDTO) {
-                        accountId = ((CurrentBankAccountDTO) bankAccount).getId();
-                    } else {
-                        accountId = ((SavingBankAccountDTO) bankAccount).getId();
+                    } catch (CustomerNotFoundException e) {
+                        e.printStackTrace();
                     }
-                    bankAccountService.credit(accountId, Math.random() * 6000, "Initial credit");
-                    bankAccountService.debit(accountId, Math.random() * 600, "Initial debit");
+                });
+
+                List<BankAccountDTO> bankAccounts = bankAccountService.listBankAccounts();
+                for (BankAccountDTO bankAccount : bankAccounts) {
+                    for (int i = 0; i < 5; i++) {
+                        String accountId;
+                        if (bankAccount instanceof CurrentBankAccountDTO) {
+                            accountId = ((CurrentBankAccountDTO) bankAccount).getId();
+                        } else {
+                            accountId = ((SavingBankAccountDTO) bankAccount).getId();
+                        }
+                        bankAccountService.credit(accountId, Math.random() * 6000, "Initial credit");
+                        bankAccountService.debit(accountId, Math.random() * 600, "Initial debit");
+                    }
                 }
             }
         };

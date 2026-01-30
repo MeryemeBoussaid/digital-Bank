@@ -9,13 +9,23 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data @Entity @AllArgsConstructor @NoArgsConstructor @Builder
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
+
+    // Authentication fields
+    @Column(unique = true)
+    private String username;
+    private String password;
+
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<BankAccount> bankAccounts;

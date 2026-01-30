@@ -12,6 +12,7 @@ export class AuthService {
   roles: any;
   username: any;
   accessToken!: any;
+  customerId: any; // For customer authentication
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -25,6 +26,10 @@ export class AuthService {
 
   isManager(): boolean {
     return this.roles && this.roles.includes('MANAGER');
+  }
+
+  isCustomer(): boolean {
+    return this.customerId != null;
   }
 
   hasRole(role: string): boolean {
@@ -48,18 +53,36 @@ export class AuthService {
     window.localStorage.setItem("jwt-token", this.accessToken);
   }
 
+  loadCustomerProfile(customerId: number, username: string) {
+    this.isAuth = true;
+    this.customerId = customerId;
+    this.username = username;
+    this.roles = null;
+    window.localStorage.setItem("customer-id", customerId.toString());
+    window.localStorage.setItem("customer-username", username);
+  }
+
   logout() {
     this.isAuth = false;
     this.accessToken = undefined;
     this.username = undefined;
     this.roles = undefined;
+    this.customerId = undefined;
     window.localStorage.removeItem("jwt-token");
+    window.localStorage.removeItem("customer-id");
+    window.localStorage.removeItem("customer-username");
     this.router.navigateByUrl("/login")
   }
 
   loadJwtTokenFromLocalStorage() {
     const token = window.localStorage.getItem("jwt-token");
-    if (token) {
+    const customerId = window.localStorage.getItem("customer-id");
+    const customerUsername = window.localStorage.getItem("customer-username");
+
+    if (customerId && customerUsername) {
+      this.loadCustomerProfile(parseInt(customerId), customerUsername);
+      this.router.navigateByUrl("/customer/dashboard");
+    } else if (token) {
       this.loadProfile({ access_token: token });
       if (this.isAdmin()) {
         this.router.navigateByUrl("/admin/home");
