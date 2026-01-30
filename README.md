@@ -265,7 +265,7 @@ Année Universitaire 2025-2026
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/votre-repo/digital-banking.git
+git clone https://github.com/MeryemeBoussaid/digital-Bank.git
 cd digital-banking
 ```
 
